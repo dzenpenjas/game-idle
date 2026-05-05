@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Hustle Idle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="loginScreen" class="login-screen">
+        <div class="login-panel">
+          <p class="kicker">Life Hustle Idle</p>
+          <h1>Bangun hidup dari kerja kecil sampai punya aset besar di Indonesia.</h1>
+          <form id="loginForm" class="login-form">
+            <label for="playerName">Nama akun</label>
+            <div class="login-row">
+              <input id="playerName" name="playerName" type="text" maxlength="18" autocomplete="off" placeholder="Contoh: Adzani" />
+              <button type="submit">Masuk</button>
+            </div>
+          </form>
+          <div class="account-list">
+            <div class="panel-title">Akun tersimpan</div>
+            <div id="savedAccounts" class="saved-accounts"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gameScreen" class="game-screen hidden">
+        <header class="topbar">
+          <div>
+            <p class="kicker">Akun</p>
+            <h2 id="accountName">Pemain</h2>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <span>Uang</span>
+              <strong id="moneyText">Rp0</strong>
+            </div>
+            <div class="stat">
+              <span>Reputasi</span>
+              <strong id="repText">0</strong>
+            </div>
+            <div class="stat">
+              <span>Investasi aktif</span>
+              <strong id="idleText">0 | Rp0</strong>
+            </div>
+          </div>
+          <button id="logoutButton" class="ghost-button">Ganti akun</button>
+        </header>
+
+        <nav class="tabs" aria-label="Navigasi game">
+          <button class="tab active" data-view="workView">Kerja</button>
+          <button class="tab" data-view="investView">Investasi</button>
+          <button class="tab" data-view="assetView">Aset</button>
+          <button class="tab" data-view="profileView">Profil</button>
+        </nav>
+
+        <section id="workView" class="view active-view">
+          <div class="work-layout">
+            <aside class="job-list">
+              <div class="section-heading">
+                <p class="kicker">Pilih pekerjaan</p>
+                <h3>Misi aktif</h3>
+              </div>
+              <div id="jobsContainer" class="jobs-container"></div>
+            </aside>
+
+            <section class="mission-panel">
+              <div class="mission-head">
+                <div>
+                  <p id="jobTag" class="kicker">Mini-game</p>
+                  <h3 id="jobTitle">Pilih pekerjaan</h3>
+                </div>
+                <div class="reward-pill" id="rewardText">Gaji Rp0</div>
+              </div>
+              <p id="jobDesc" class="mission-copy">Pilih satu pekerjaan untuk mulai mencari uang.</p>
+              <div id="gameArea" class="game-area"></div>
+              <div class="mission-actions">
+                <button id="startMissionButton">Mulai misi</button>
+                <button id="claimButton" class="success-button" disabled>Ambil gaji</button>
+              </div>
+              <div id="missionStatus" class="mission-status">Belum ada misi berjalan.</div>
+            </section>
+          </div>
+        </section>
+
+        <section id="assetView" class="view">
+          <div class="section-heading">
+            <p class="kicker">Belanja hasil kerja</p>
+            <h3>Toko aset</h3>
+          </div>
+          <div id="assetsContainer" class="assets-grid"></div>
+        </section>
+
+        <section id="investView" class="view">
+          <div class="section-heading">
+            <p class="kicker">Putar rupiah</p>
+            <h3>Investasi Indonesia</h3>
+          </div>
+          <div id="investmentsContainer" class="investments-grid"></div>
+          <div class="section-heading investment-heading">
+            <p class="kicker">Portofolio</p>
+            <h3>Investasi berjalan</h3>
+          </div>
+          <div id="portfolioContainer" class="portfolio-list"></div>
+        </section>
+
+        <section id="profileView" class="view">
+          <div class="profile-grid">
+            <section class="profile-panel">
+              <div class="section-heading">
+                <p class="kicker">Perkembangan</p>
+                <h3>Ringkasan akun</h3>
+              </div>
+              <div id="profileStats" class="profile-stats"></div>
+            </section>
+            <section class="profile-panel">
+              <div class="section-heading">
+                <p class="kicker">Desain loop</p>
+                <h3>Kenapa terasa seru</h3>
+              </div>
+              <ul class="design-notes">
+                <li>Hadiah cepat dari mini-game membuat pemain merasa produktif setiap sesi.</li>
+                <li>Mini-game memberi rupiah aktif, investasi mengubah modal kecil menjadi target besar.</li>
+                <li>Instrumen memakai nama yang familiar di Indonesia seperti deposito, SBN, reksa dana, saham IDX, UMKM, dan properti.</li>
+                <li>Aset menjadi simbol status dan reputasi, bukan mesin uang otomatis.</li>
+                <li>Portofolio matang memberi alasan kuat untuk kembali bermain.</li>
+              </ul>
+            </section>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
